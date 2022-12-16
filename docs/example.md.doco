@@ -1,0 +1,15 @@
+Hello! Let's get some test code in here
+
+# content of test_sample.py
+def func(x):
+    return x + 1
+
+
+def test_answer():
+    assert func(3) == 5
+---
+
+What if we only want a certain range of lines from a file?
+
+def test_answer():
+    assert func(3) == 5
