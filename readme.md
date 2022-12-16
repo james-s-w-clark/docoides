@@ -21,13 +21,29 @@ Docoides is a POC documentation preprocessor to lift (extremely) atomic tests in
         - Some description... maybe that's more before the example (like in adoc)
       - By using the typical link syntax, IDEs can let users in .md files navigate to the target code instantly. This is *very* important!
 - Just a little POC here - it should probably be in .js or .ts, but I can iterate faster in Python
+- As a reader, I want code blocks to have correct highlighting
+  - Code blocks for .scala files should have ```scala, .py -> python, .sh -> shell, etc. 
+- ~~Docoides should link to the code they are sourced from~~
+  - locally: relative file path in project
+    - actually, the non-processed markdown text will link just fine
+  - online: link to github
+    - doesn't really add much value
+- As a documenter, I want Docoides to fail and let me know if:
+  - it can't find a file
+  - it can't fine a chosen line range in that file
+  - it can't find a test name in that file
 
 # Extra ideas / notes
 - Ideally, whole files should be resembled in docs
-  - It might be a bit ugly
+  - It might be a bit ugly - imports
   - All the context is there - imports, EOF, everything
   - Might fragment test code too much
   - Referencing a file with multiple tests in would be too large
     - Could link to specific line numbers
     - Could link to a keyword (e.g. a test name)
     - Both are brittle, but it'd be a nice option to have.
+- By referencing an existing file, duplication is reduced - so with Docoides there's less chance of having working but technically inaccurate/outdated code in your documentation
+- There are great tools that can test your Scala snippets, like scala-cli or mdoc
+  - scala-cli can run your code snippets if you point it to the file
+  - It would be interesting to explore the ergonomics of users navigating to actual src/test code in your repo from markdown documentation 
+- Probably only works well when your code is in the same repo as your website... which I have seen quite a few times e.g. [growthbook](https://github.com/growthbook/growthbook/tree/main/docs), [smithy4s](https://github.com/disneystreaming/smithy4s/tree/main/modules/website)
