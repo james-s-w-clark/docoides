@@ -47,3 +47,5 @@ Docoides is a POC documentation preprocessor to lift (extremely) atomic tests in
   - scala-cli can run your code snippets if you point it to the file
   - It would be interesting to explore the ergonomics of users navigating to actual src/test code in your repo from markdown documentation 
 - Probably only works well when your code is in the same repo as your website... which I have seen quite a few times e.g. [growthbook](https://github.com/growthbook/growthbook/tree/main/docs), [smithy4s](https://github.com/disneystreaming/smithy4s/tree/main/modules/website)
+- Linked code will usually be a different kind of "test" - authors may want to put runnable examples in a directory like `test/docs-examples`.
+  - If your code snippets in documentation are runnable examples that are guaranteed to work, that's probably a great thing!
